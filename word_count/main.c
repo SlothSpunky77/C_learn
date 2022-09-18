@@ -6,7 +6,7 @@ int main()
 	int c, nl, nw, nc, state;
 	state = OUT;
 	nl = nw = nc = 0;
-	int windx = 0;
+	int w_index = 0;
 
 	while ((c = getchar()) != EOF)
 	{
@@ -16,20 +16,18 @@ int main()
 		if (c == ' ' || c == '\n' || c == '\t')
 		{
 			state = OUT;
-			if(1 == windx) 
+			if(1 == w_index) 
 				--nw;
-			windx = 0;
+			w_index = 0;
 		}
 		else if (state == OUT)
 		{
 			state = IN;
 			++nw;
-			++windx;
+			++w_index;
 		}
 		else
-			++windx;
+			++w_index;
 	}
 	printf("\nNew line count: %d\nWord count: %d\nCharacter count: %d\n", nl, nw, nc);
 }
-
-
