@@ -11,12 +11,12 @@ typedef struct cll
 
 void Display(CLL* list)
 {
-    CLL* disp = list;
-    while (disp != NULL)
+    CLL* head = list;
+    while (list != NULL)
     {
-        printf("%d ",disp->info);
-        disp = disp->next;
-        if (disp == list)
+        printf("%d ",list->info);
+        list = list->next;
+        if (list == head)
         {
             printf("\n");
             break;
@@ -129,6 +129,7 @@ int main()
         }
         Display(tuple2);
     }    
-
+    printf("Original list: ");
+    Display(list);
     return 0;
 }
