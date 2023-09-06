@@ -93,6 +93,5 @@ int main()
 
     pointerDisp(pointer1);
     pointerDisp(pointer2);
-    
-
+    return 0;
 }
